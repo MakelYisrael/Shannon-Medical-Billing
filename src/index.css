@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global interactive styles */
+@layer components {
+  button, [role="button"] {
+    @apply cursor-pointer transition-all duration-200;
+  }
+
+  button:hover:not(:disabled), [role="button"]:hover:not([aria-disabled="true"]) {
+    @apply opacity-90;
+  }
+
+  button:active:not(:disabled), [role="button"]:active:not([aria-disabled="true"]) {
+    @apply opacity-75;
+  }
+
+  input:hover:not(:disabled),
+  textarea:hover:not(:disabled),
+  select:hover:not(:disabled) {
+    @apply border-gray-400;
+  }
+
+  input:focus:not(:disabled),
+  textarea:focus:not(:disabled),
+  select:focus:not(:disabled) {
+    @apply outline-none ring-2 ring-blue-500;
+  }
+}
